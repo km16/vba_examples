@@ -3,13 +3,16 @@ Option Explicit
 
 Sub createData()
 
+' Farbformatierung für Spalte C zurücksetzen
 Columns(3).Interior.ColorIndex = 0
 
 Dim i As Integer
 
 For i = 11 To 21
 
+' Setze Zellenformat auf Währung in €
 Cells(i, 3).NumberFormat = "#,##0.00 € "
+' Generiere Zufallswerte mit Rundung
 Cells(i, 3).Value = ((11111 - 99999 + 1) * Rnd + 99999)
 
 Next i
@@ -56,7 +59,7 @@ Sub markAvg()
 Dim avgSalary As Double
 Dim i As Integer
 
-' Farbenformatierung für Spalte C zurücksetzen
+' Farbformatierung für Spalte C zurücksetzen
 Cells(23, 3).Interior.Color = RGB(250, 230, 153)
 
 ' Durchschnittliches Gehalt aus Zelle extrahieren und in Variable speichern
@@ -72,6 +75,7 @@ Else
     Cells(i, 3).Interior.Color = RGB(248, 203, 173)
 End If
 
+' (für Word-Dokument streichen)
 Application.Wait (Now + #12:00:01 AM#)
 
 Next i
@@ -82,5 +86,6 @@ End Sub
 Sub activateSheet()
 
 Worksheets(ActiveSheet.Index + 1).Activate
+
 End Sub
 
