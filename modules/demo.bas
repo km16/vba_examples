@@ -2,14 +2,14 @@ Attribute VB_Name = "demo"
 Option Explicit
 
 
-Sub selectData()
+Sub selectRangeData()
 
 Range("A11:B25").Select
 
 End Sub
 
 
-Sub copyData()
+Sub copyRangeData()
 
 If IsEmpty(Cells(11, 7)) Then
 
@@ -24,7 +24,7 @@ End If
 End Sub
 
 
-Sub cutData()
+Sub cutRangeData()
 
 If IsEmpty(Cells(11, 7)) Then
 
@@ -39,7 +39,7 @@ End If
 End Sub
 
 
-Sub pasteData()
+Sub pasteRangeData()
 
 If IsEmpty(Cells(11, 7)) Then
 
@@ -54,7 +54,28 @@ End If
 End Sub
 
 
-Sub createData()
+Sub createRangeData()
+
+Dim i As Integer
+
+For i = 11 To 25
+
+Cells(i, 1).Value = Round(((25 - 1 + 1) * Rnd + 1), 0)
+Cells(i, 2).Value = Round(((25 - 1 + 1) * Rnd + 1), 0)
+
+Next i
+
+End Sub
+
+
+Sub removeRangeData()
+
+Range(Cells(11, 1), Cells(25, 8)).ClearContents
+
+End Sub
+
+
+Sub createSalaryData()
 
 ' Farbformatierung für Spalte C zurücksetzen
 Columns(3).Interior.ColorIndex = 0
@@ -65,8 +86,8 @@ For i = 11 To 21
 
 ' Setze Zellenformat auf Währung in €
 Cells(i, 3).NumberFormat = "#,##0.00 € "
-' Generiere Zufallswerte mit Rundung
-Cells(i, 3).Value = ((11111 - 99999 + 1) * Rnd + 99999)
+' Generiere Zufallswerte
+Cells(i, 3).Value = ((25 - 1 + 1) * Rnd + 1)
 
 Next i
 
@@ -107,7 +128,7 @@ Next i
 End Sub
 
 
-Sub markAvg()
+Sub markAvgSalary()
 
 Dim avgSalary As Double
 Dim i As Integer
