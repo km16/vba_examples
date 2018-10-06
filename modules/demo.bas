@@ -13,7 +13,7 @@ Sub copyData()
 
 If IsEmpty(Cells(11, 7)) Then
 
-Range("A11:B25").Copy Cells(11, 7)
+Range(Cells(11, 1), Cells(25, 2)).Copy Cells(11, 7)
 
 Else
 
@@ -28,7 +28,7 @@ Sub cutData()
 
 If IsEmpty(Cells(11, 7)) Then
 
-Range("A11:B25").Cut Cells(11, 7)
+Range(Cells(11, 1), Cells(25, 2)).Cut Cells(11, 7)
 
 Else
 
