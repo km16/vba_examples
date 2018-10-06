@@ -1,6 +1,59 @@
 Attribute VB_Name = "demo"
 Option Explicit
 
+
+Sub selectData()
+
+Range("A11:B25").Select
+
+End Sub
+
+
+Sub copyData()
+
+If IsEmpty(Cells(11, 7)) Then
+
+Range("A11:B25").Copy Cells(11, 7)
+
+Else
+
+MsgBox ("Daten in Zielzelle vorhanden. Bitte vorher löschen.")
+
+End If
+
+End Sub
+
+
+Sub cutData()
+
+If IsEmpty(Cells(11, 7)) Then
+
+Range("A11:B25").Cut Cells(11, 7)
+
+Else
+
+MsgBox ("Daten in Zielzelle vorhanden. Bitte vorher löschen.")
+
+End If
+
+End Sub
+
+
+Sub pasteData()
+
+If IsEmpty(Cells(11, 7)) Then
+
+Cells(11, 7).Insert
+
+Else
+
+MsgBox ("Daten in Zielzelle vorhanden. Bitte vorher löschen.")
+
+End If
+
+End Sub
+
+
 Sub createData()
 
 ' Farbformatierung für Spalte C zurücksetzen
@@ -83,7 +136,7 @@ Next i
 End Sub
 
 
-Sub activateSheet()
+Sub activateNextSheet()
 
 Worksheets(ActiveSheet.Index + 1).Activate
 
