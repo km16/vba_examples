@@ -7,9 +7,9 @@ Sub overflowInt()
 Dim i As Integer
 Dim j As Integer
 
-i = (2 ^ 16) / 2 - 2
+i = (2 ^ 16) / 2 - 3
 
-For j = 0 To 1
+For j = 0 To 2
 
 Cells(11, 7).Value = i
 
