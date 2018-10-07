@@ -70,6 +70,6 @@ End Sub
 
 Sub removeRangeData()
 
-Range(Cells(11, 1), Cells(25, 8)).ClearContents
+Range(Cells(11, 7), Cells(25, 8)).ClearContents
 
 End Sub

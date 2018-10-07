@@ -7,7 +7,7 @@ Sub overflowInt()
 Dim i As Integer
 Dim j As Integer
 
-i = (2 ^ 16) / 2 - 3
+i = 32765
 
 For j = 0 To 2
 
@@ -21,13 +21,27 @@ Next j
 
 End Sub
 
-Sub String1()
 
-Dim x As String
+Sub addIntToString()
 
-x = "<Text>"
+Dim str As String
 
-MsgBox x
+str = Cells(11, 10)
+
+str = str + "1"
+
+Cells(11, 10).Value = str
 
 End Sub
 
+
+Sub addCharToString()
+
+Dim str As String
+
+str = Cells(11, 10)
+
+str = str + "a"
+
+Cells(11, 10).Value = str
+End Sub
