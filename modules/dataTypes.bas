@@ -20,3 +20,14 @@ i = i + 1
 Next j
 
 End Sub
+
+Sub String1()
+
+Dim x As String
+
+x = "<Text>"
+
+MsgBox x
+
+End Sub
+
